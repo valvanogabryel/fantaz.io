@@ -70,6 +70,10 @@ const data = {
       icon: DownloadIcon,
       moreItems: [
         {
+          title: "Regras",
+          url: "#",
+        },
+        {
           title: "Bestiário",
           url: "#",
         },
