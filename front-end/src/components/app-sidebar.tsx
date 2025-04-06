@@ -124,7 +124,7 @@ const data = {
     },
     {
       name: "Rolador de Dados",
-      url: "#",
+      url: "/dice-roller",
       icon: DicesIcon,
     },
     {

@@ -4,6 +4,8 @@ import { PT_Sans } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { MusicProvider } from "@/contexts/MusicContext";
+import MusicControls from "@/components/music-controls";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -37,7 +39,10 @@ export default function RootLayout({
             <div>
               <SidebarTrigger />
             </div>
-          {children}
+            <MusicProvider>
+              {children}
+              <MusicControls/>
+            </MusicProvider>
           </main>
         </SidebarProvider>
       </body>

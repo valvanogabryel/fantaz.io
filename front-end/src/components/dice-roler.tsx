@@ -3,8 +3,10 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Dice5, Dice6 } from "lucide-react"
+import { Dice5, Dice6, ExpandIcon } from "lucide-react"
 import { motion } from "framer-motion"
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog"
+import { DiceRollerApp } from "./dice-roller/dice-roller-app"
 
 type DiceType = "d4" | "d6" | "d8" | "d10" | "d12" | "d20" | "d100"
 
@@ -43,8 +45,20 @@ export function DiceRoller() {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="flex items-center justify-between">
         <CardTitle className="text-xl">Rolador de Dados</CardTitle>
+
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <ExpandIcon/>
+            </Button>
+          </DialogTrigger>
+
+          <DialogContent className="!max-w-none !w-[90lvw]">
+            <DiceRollerApp/>
+          </DialogContent>
+        </Dialog>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-3 gap-2 mb-4">
